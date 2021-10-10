@@ -33,7 +33,37 @@ class Ticket extends Entity
             'ticket_id' => ['type' => self::STR, 'maxLength' => 25, 'default' => ''],
             'title' => ['type' => self::STR, 'required' => true],
             'user_id' => ['type' => self::UINT, 'required' => true],
-            
+            'department_id' => ['type' => self::UINT, 'required' => true],
+            'status_id' => ['type' => self::UINT, 'default' => 1],
+            'assigned_user_id' => ['type' => self::UINT, 'default' => 0],
+            'thread_id' => ['type' => self::UINT, 'default' => 0]
+        ];
+
+        $structure->relations = [
+            'Department' => [
+                'entity' => 'Host2x\Support:Department',
+                'type' => self::TO_ONE,
+                'conditions' => 'department_id',
+                'primary' => true
+            ],
+            'User' => [
+                'entity' => 'XF:User',
+                'type' => self::TO_ONE,
+                'conditions' => 'user_id',
+                'primary' => true
+            ],
+            'Assignee' => [
+                'entity' => 'XF:User',
+                'type' => self::TO_ONE,
+                'conditions' => 'assigned_user_id',
+                'primary' => true
+            ],
+            'Status' => [
+                'entity' => 'NF\Tickets:Status',
+                'type' => self::TO_ONE,
+                'conditions' => 'status_id',
+                'primary' => true
+            ]
         ];
     }
 
