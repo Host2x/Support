@@ -1,0 +1,17 @@
+{
+    "admin/host2x_kb_category_list.html": {
+        "version_id": 100000,
+        "version_string": "1.0.0 Alpha",
+        "hash": "0d01ef3321149a4190cf71fc734e7b02"
+    },
+    "admin/host2x_support_status_edit.html": {
+        "version_id": 100000,
+        "version_string": "1.0.0 Alpha",
+        "hash": "57d4f67aea87d583b970c8c16b4af70a"
+    },
+    "admin/host2x_support_status_list.html": {
+        "version_id": 100000,
+        "version_string": "1.0.0 Alpha",
+        "hash": "fcad0ff8b58e9123f791ec8a7d0bd22a"
+    }
+}

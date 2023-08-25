@@ -59,7 +59,7 @@ class Ticket extends Entity
                 'primary' => true
             ],
             'Status' => [
-                'entity' => 'NF\Tickets:Status',
+                'entity' => 'Host2x\Support:Status',
                 'type' => self::TO_ONE,
                 'conditions' => 'status_id',
                 'primary' => true

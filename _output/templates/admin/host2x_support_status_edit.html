@@ -1,0 +1,27 @@
+<xf:if is="$status.isInsert()">
+	<xf:title>{{ phrase('host2x_support_add_ticket_status') }}</xf:title>
+<xf:else />
+	<xf:title>{{ phrase('host2x_support_edit_ticket_status:') }} {$status.title}</xf:title>
+</xf:if>
+
+<xf:comment>
+<xf:pageaction if="$status.isUpdate()">
+	<xf:button href="{{ link('support/statuses/delete', $status) }}" icon="delete" overlay="true" />
+</xf:pageaction>
+</xf:comment>
+
+<xf:form action="{{ link('support/statuses/save', $status) }}" class="block" ajax="true">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:textboxrow name="title" value="{{ $status.isUpdate() ? $status.title : ''}}"
+				label="{{ phrase('title') }}" />
+
+			<xf:macro template="display_order_macros" name="row"
+				arg-value="{$status.display_order}" />
+			<xf:checkboxrow>
+				<xf:option label="{{ phrase('enabled')}}" selected="{$status.active}" name="active" />
+			</xf:checkboxrow>
+			<xf:submitrow icon="save" sticky="true" />
+		</div>
+	</div>
+</xf:form>

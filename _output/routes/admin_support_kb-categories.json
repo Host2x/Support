@@ -1,0 +1,11 @@
+{
+    "route_type": "admin",
+    "route_prefix": "support",
+    "sub_name": "kb/categories",
+    "format": "kb/categories/:int<kb_category_id,title>/",
+    "build_class": "",
+    "build_method": "",
+    "controller": "Host2x\\Support\\Admin\\Controller\\KBCategory",
+    "context": "",
+    "action_prefix": ""
+}

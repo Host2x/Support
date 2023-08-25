@@ -1,0 +1,32 @@
+{
+    "admin_navigation.host2xSupport.txt": {
+        "global_cache": false,
+        "version_id": 100000,
+        "version_string": "1.0.0 Alpha",
+        "hash": "b0ffe23bddac34bf5698ef7b84d99859"
+    },
+    "admin_navigation.host2xSupportKnowledgeBase.txt": {
+        "global_cache": false,
+        "version_id": 100000,
+        "version_string": "1.0.0 Alpha",
+        "hash": "083065d6760791eb1195154619e5813c"
+    },
+    "admin_navigation.host2xSupportStatuses.txt": {
+        "global_cache": false,
+        "version_id": 100000,
+        "version_string": "1.0.0 Alpha",
+        "hash": "61fe9018991004014d12b8d81568df90"
+    },
+    "host2x_support_add_ticket_status.txt": {
+        "global_cache": false,
+        "version_id": 100000,
+        "version_string": "1.0.0 Alpha",
+        "hash": "ee3554a9e6beb1737993a5e0c16a9a8a"
+    },
+    "host2x_support_edit_ticket_status.txt": {
+        "global_cache": false,
+        "version_id": 100000,
+        "version_string": "1.0.0 Alpha",
+        "hash": "9d9a5c74b6220aaa76c4701750ffc862"
+    }
+}

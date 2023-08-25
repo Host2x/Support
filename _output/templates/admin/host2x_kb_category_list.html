@@ -1,0 +1,48 @@
+<xen:title>{xen:phrase host2x_kb_collections}</xen:title>
+
+<xen:topctrl><a href="{xen:adminlink support/kb/categories/add}" class="button">+ {xen:phrase host2x_create_new_collection}</a></xen:topctrl>
+
+<xen:require css="filter_list.css" />
+<xen:require js="js/xenforo/filter_list.js" />
+
+<xen:form action="{xen:adminlink host2x_kb_collections}" class="section">
+	<xen:if is="{$collections}">
+
+		<h2 class="subHeading">
+			<xen:include template="filter_list_controls" />
+			{xen:phrase host2x_kb_collections}
+		</h2>
+
+		<ol class="FilterList Scrollable">
+			<xen:foreach loop="$collections" value="$collection">
+				<xen:listitem
+					id="{$collection.collection_id}"
+					label="{$collection.collection_title}"
+					snippet="({$collection.ticket_count})"
+					href="{xen:adminlink 'support/kb/categories/edit', $collection}"
+					delete="{xen:adminlink 'support/kb/categories/delete', $collection}"
+					class="_depth{$collection.depth}">
+					<xen:html>
+						<xen:popup title="{xen:phrase create_new_elipses}">
+							<xen:link href="{xen:adminlink 'support/kb/categories/add', '', 'parent_collection_id={$collection.parent_collection_id}'}">{xen:phrase nf_tickets_sibling_collection}</xen:link>
+							<xen:link href="{xen:adminlink 'support/kb/categories/add', '', 'parent_collection_id={$collection.collection_id}'}">{xen:phrase nf_tickets_child_collection}</xen:link>
+						</xen:popup>
+						<span class="secondaryContent hiddenMediumUnder" style="width:75px; min-height:20px;">
+							<div class="pairsJustified">
+								<dl>
+									<dt>{xen:phrase host2x_tickets_order}: </dt>
+									<dd>{$collection.display_order}</dd>
+								</dl>
+							</div>
+						</span>
+					</xen:html>
+				</xen:listitem>
+			</xen:foreach>
+		</ol>
+
+		<p class="sectionFooter">{xen:phrase showing_x_of_y_items, 'count=<span class="FilterListCount">{xen:count $collections}</span>', 'total={xen:count $collections}'}</p>
+
+	<xen:else />
+		<div class="noResults">{xen:phrase host2x_no_kb_collections_have_been_created_yet}</div>
+	</xen:if>
+</xen:form>
